@@ -17,5 +17,3 @@ data_transform <- function(data, by_year = FALSE){
   
   return(data)
 }
-
-data2 <- data_transform(data, by_year = TRUE)
