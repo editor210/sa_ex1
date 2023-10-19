@@ -10,10 +10,6 @@ data_transform <- function(data){
                                                           Month = rep(c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), 12))
                                   #Rearranging the columns
                                   data <- data[c("Year", "Month", "Passengers")]
-                                  
-                                  #if (by_year == TRUE) {
-                                  #  data <- data %>% group_by(Year) %>% summarise(Passengers = sum(Passengers))
-                                  #}
   
   return(data)
 }
