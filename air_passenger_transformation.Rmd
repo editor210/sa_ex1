@@ -1,0 +1,40 @@
+---
+title: "AirPassengers Transformation"
+author: "Edimilson Torres de Oliveira Neto"
+date: "2023-10-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Air Passengers Transformation
+
+The Air Passengers Dataset is a built-in R dataset that contains Monthly totals of international airline passengers, from 1949 to 1960, in thousands.
+
+The Air Passengers data is originally provided in a Time Series format.
+
+```{r AirPassengers_Original}
+AirPassengers
+```
+The data_transform function transforms the data into a tidy DataFrame with the columns Year, Month and Passengers
+
+```{r AirPassengers_Transformation}
+#Assigning the data to a variable
+data <- AirPassengers
+
+#Importing the function from the R file of the repository
+source("transform_data.R")
+
+#Printing the transformed data
+print(head(data_transform(data)))
+
+```
+The data_transform function has two arguments "data" and "by_year". The first one provides the "AirPassengers" original dataset. The second parameter is optional and it has a default value of FALSE. In case the parameter is changed to TRUE, then the resulting dataset will be presented grouped by Year.
+
+```{r AirPassengers_by_year}
+#Printing the transformed data grouped by year
+print(head(data_transform(data, by_year = TRUE)))
+
+```
